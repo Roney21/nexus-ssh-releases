@@ -3,10 +3,11 @@
 
 # Nexus.ssh
 
-**A fast, modern SSH, SFTP, and RDP client for Windows and Linux — free.**
+**A fast, modern SSH, SFTP, and RDP client for Windows, Linux, and macOS — free.**
 
 [![Download for Windows](https://img.shields.io/badge/Download-Windows-4f8ef7?style=for-the-badge&logo=windows&logoColor=white)](../../releases/latest)
 [![Download for Linux](https://img.shields.io/badge/Download-Linux-4f8ef7?style=for-the-badge&logo=linux&logoColor=white)](../../releases/latest)
+[![Download for macOS](https://img.shields.io/badge/Download-macOS-4f8ef7?style=for-the-badge&logo=apple&logoColor=white)](../../releases/latest)
 [![Support on Ko-fi](https://img.shields.io/badge/Support-Ko--fi-ff5e5b?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/vladyslavdubov)
 
 </div>
@@ -82,6 +83,34 @@ chmod +x Nexus.ssh_*_amd64.AppImage
 
 If it won't launch and mentions FUSE, install `libfuse2` (older distros) or
 run it with `--appimage-extract-and-run`.
+
+### macOS
+
+| File | Use this if... |
+|---|---|
+| `Nexus.ssh_aarch64.dmg` | You have an Apple Silicon Mac (M1 or newer) |
+
+**Requirements:** macOS on Apple Silicon (M1/M2/M3/M4). Intel Macs aren't
+built yet — see the [Roadmap](../../wiki/Roadmap).
+
+Open the `.dmg` and drag Nexus.ssh into Applications, same as any other Mac app.
+
+#### About the "unidentified developer" warning
+
+Nexus.ssh doesn't have an Apple Developer certificate yet, so macOS
+Gatekeeper won't let you open it with a plain double-click — this is
+stricter than Windows' SmartScreen warning and needs one of:
+
+- **Right-click (or Control-click) the app → Open → Open** in the dialog
+  that appears. This works on macOS Sonoma and earlier.
+- **On macOS Sequoia (15) and later**, that shortcut was removed. Instead:
+  try to open the app once (it'll refuse), then go to **System Settings →
+  Privacy & Security**, scroll to the "Nexus.ssh was blocked" notice, and
+  click **Open Anyway**.
+- Or, from Terminal, strip the quarantine flag directly:
+  `xattr -cr /Applications/Nexus.ssh.app`
+
+Any of these only needs to be done once, the first time you open it.
 
 ## Support the project
 
